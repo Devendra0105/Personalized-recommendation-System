@@ -102,7 +102,8 @@ def main():
 
         
         else:
-            print("Please enter a valid option (1-4)")
+            print("Please enter a valid option (1-6)")
 
 if __name__ == "__main__":
+
     main()
