@@ -3,7 +3,6 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 
 def collaborative_filtering(user_id, ratings, movies, n_recommendations=10):
-    """Simple collaborative filtering based on user similarity"""
     print(f"Collaborative recommendations for user {user_id}")
     
     # Create user-item matrix
@@ -25,7 +24,6 @@ def collaborative_filtering(user_id, ratings, movies, n_recommendations=10):
         columns=user_item_matrix.index
     )
     
-    # Get similar users
     similar_users = user_sim_df[user_id].sort_values(ascending=False)[1:6]
     
     # Get movies liked by similar users
@@ -78,4 +76,5 @@ def hybrid_recommendations(user_id, genre_input, movies_with_stats, ratings, all
             movie_title = movies_with_stats[movies_with_stats['movieId'] == movie_id]['title'].values[0]
             print(f"{i}. {movie_title} (Collaborative)")
     
+
     return hybrid_results
